@@ -1,3 +1,12 @@
+/* Scroll snap */
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  scroll-snap-align: start;
+}
+
 /* General */
 body {
   font-family: 'Roboto', sans-serif;
@@ -5,66 +14,104 @@ body {
 }
 
 /* Colors */
-.bg-blue { background-color: #007BFF; }
-.text-blue { color: #007BFF; }
+.bg-blue {
+  background-color: #007BFF;
+}
+.text-blue {
+  color: #007BFF;
+}
 
 /* Sections */
 .section {
   min-height: 100vh;
+  padding: 80px 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 60px 0;
 }
 
-/* Hero Section */
+/* Section background colors */
 #hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+#about {
+  background-color: #f0f8ff; /* light blue */
+}
+#services { background-color: #dbeafe; }
+#portfolio { background-color: #bfdbfe; }
+#team { background-color: #93c5fd; }
+
+
+#contact {
+  background-color: #e8f1ff;
+}
+
+/* Hero */
+#hero {
+  background: #ffffff;
 }
 
 /* Hero Image */
 .hero-img {
   width: 100%;
-  max-width: 450px;   /* controls size */
-  height: auto;       /* keeps ratio */
+  max-width: 450px;
+  height: auto;
 }
-
-/* Optional center on mobile */
-@media (max-width: 768px) {
-  .hero-img {
-    margin-top: 30px;
-  }
-}
-
-
 
 /* Box model */
 .box {
-  background: white;
+   
+  background: #fff;
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border: 2px solid #007BFF;
+  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
   width: 100%;
   max-width: 900px;
 }
 
 /* Navbar */
-.navbar { padding: 1rem 2rem; }
-.navbar .nav-link:hover { color: #ffc107 !important; }
-
-/* Cards */
-.service-card, .team-card, .card {
-  border: 2px solid #007BFF;
-  border-radius: 10px;
-  transition: transform 0.3s;
+.navbar {
+  padding: 1rem 2rem;
 }
-.service-card:hover, .team-card:hover, .card:hover {
-  transform: translateY(-5px);
+.navbar .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+/* Service & Team Cards */
+.service-card,
+.team-card {
+  border: 2px solid #007BFF;
+  border-radius: 12px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover,
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+}
+
+/* Portfolio Images */
+.card img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 /* Footer */
 footer {
   font-size: 0.9rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-img {
+    margin-top: 30px;
+  }
+
+  .box {
+    padding: 25px;
+  }
 }
