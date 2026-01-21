@@ -1,0 +1,70 @@
+/* General */
+body {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Colors */
+.bg-blue { background-color: #007BFF; }
+.text-blue { color: #007BFF; }
+
+/* Sections */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+/* Hero Section */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero Image */
+.hero-img {
+  width: 100%;
+  max-width: 450px;   /* controls size */
+  height: auto;       /* keeps ratio */
+}
+
+/* Optional center on mobile */
+@media (max-width: 768px) {
+  .hero-img {
+    margin-top: 30px;
+  }
+}
+
+
+
+/* Box model */
+.box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Navbar */
+.navbar { padding: 1rem 2rem; }
+.navbar .nav-link:hover { color: #ffc107 !important; }
+
+/* Cards */
+.service-card, .team-card, .card {
+  border: 2px solid #007BFF;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.service-card:hover, .team-card:hover, .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
