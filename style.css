@@ -1,4 +1,33 @@
-/* Scroll snap */
+/* ==============================
+   CSS VARIABLES (THEME COLORS)
+================================ */
+:root {
+  /* Primary */
+  --primary-blue: #007BFF;
+  --primary-blue-light: #e3f2fd;
+
+  /* Section backgrounds */
+  --bg-about: #f0f8ff;
+  --bg-services: #dbeafe;
+  --bg-portfolio: #bfdbfe;
+  --bg-team: #93c5fd;
+  --bg-contact: #e8f1ff;
+
+  /* Neutral */
+  --white: #ffffff;
+  --text-dark: #212529;
+
+  /* Shadows */
+  --shadow-blue: rgba(0, 123, 255, 0.15);
+  --shadow-blue-strong: rgba(0, 123, 255, 0.25);
+
+  /* Accent */
+  --accent-yellow: #ffc107;
+}
+
+/* ==============================
+   SCROLL SNAP
+================================ */
 html {
   scroll-snap-type: y mandatory;
 }
@@ -7,21 +36,30 @@ html {
   scroll-snap-align: start;
 }
 
-/* General */
+/* ==============================
+   GENERAL
+================================ */
 body {
   font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  background-color: var(--white);
 }
 
-/* Colors */
+/* Utility Colors */
 .bg-blue {
-  background-color: #007BFF;
-}
-.text-blue {
-  color: #007BFF;
+  background-color: var(--primary-blue);
 }
 
-/* Sections */
+.text-blue {
+  color: var(--primary-blue);
+}
+
+/* ==============================
+   SECTIONS
+================================ */
 .section {
   min-height: 100vh;
   padding: 80px 0;
@@ -29,83 +67,109 @@ body {
   align-items: center;
 }
 
-/* Section background colors */
+/* Section Backgrounds */
 #hero {
-  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue-light),
+    var(--white)
+  );
 }
 
 #about {
-  background-color: #f0f8ff; /* light blue */
+  background-color: var(--bg-about);
 }
-#services { background-color: #dbeafe; }
-#portfolio { background-color: #bfdbfe; }
-#team { background-color: #93c5fd; }
 
+#services {
+  background-color: var(--bg-services);
+}
+
+#portfolio {
+  background-color: var(--bg-portfolio);
+}
+
+#team {
+  background-color: var(--bg-team);
+}
 
 #contact {
-  background-color: #e8f1ff;
+  background-color: var(--bg-contact);
 }
 
-/* Hero */
-#hero {
-  background: #ffffff;
-}
-
-/* Hero Image */
+/* ==============================
+   HERO
+================================ */
 .hero-img {
   width: 100%;
   max-width: 450px;
   height: auto;
 }
 
-/* Box model */
+/* ==============================
+   BOX / CONTAINER
+================================ */
 .box {
-   
-  background: #fff;
+  background: var(--white);
   padding: 40px;
   border-radius: 15px;
-  border: 2px solid #007BFF;
-  box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+  border: 2px solid var(--primary-blue);
+  box-shadow: 0 10px 30px var(--shadow-blue);
   width: 100%;
   max-width: 900px;
 }
 
-/* Navbar */
+/* ==============================
+   NAVBAR
+================================ */
 .navbar {
   padding: 1rem 2rem;
 }
-.navbar .nav-link:hover {
-  color: #ffc107 !important;
+
+.navbar .nav-link {
+  transition: color 0.3s ease;
 }
 
-/* Service & Team Cards */
+.navbar .nav-link:hover {
+  color: var(--accent-yellow) !important;
+}
+
+/* ==============================
+   SERVICE & TEAM CARDS
+================================ */
 .service-card,
 .team-card {
-  border: 2px solid #007BFF;
+  border: 2px solid var(--primary-blue);
   border-radius: 12px;
-  background: #fff;
-  transition: all 0.3s ease;
+  background: var(--white);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover,
 .team-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.25);
+  box-shadow: 0 8px 20px var(--shadow-blue-strong);
 }
 
-/* Portfolio Images */
+/* ==============================
+   PORTFOLIO
+================================ */
 .card img {
   height: 220px;
   object-fit: cover;
   border-radius: 10px;
 }
 
-/* Footer */
+/* ==============================
+   FOOTER
+================================ */
 footer {
   font-size: 0.9rem;
+  background-color: var(--white);
 }
 
-/* Mobile */
+/* ==============================
+   RESPONSIVE (MOBILE)
+================================ */
 @media (max-width: 768px) {
   .hero-img {
     margin-top: 30px;
@@ -113,5 +177,9 @@ footer {
 
   .box {
     padding: 25px;
+  }
+
+  .section {
+    padding: 60px 0;
   }
 }
